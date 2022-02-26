@@ -23,14 +23,28 @@ import "fmt"
 
 //Runtime: 36 ms, faster than 33.97% of Go online submissions for Palindrome Number.
 //Memory Usage: 4.8 MB, less than 62.15% of Go online submissions for Palindrome Number.
+// func isPalindrome(x int) bool {
+// 	reversedNum := 0
+// 	if x < 0 {
+// 		return false
+// 	}
+// 	for n := x; n > 0; n /= 10 {
+// 		reversedNum = (reversedNum + n%10) * 10
+// 	}
+// 	fmt.Println(reversedNum / 10)
+// 	return (reversedNum / 10) == x
+// }
+
+// Runtime: 12 ms, faster than 91.72% of Go online submissions for Palindrome Number.
+// Memory Usage: 4.6 MB, less than 93.95% of Go online submissions for Palindrome Number.
 func isPalindrome(x int) bool {
 	reversedNum := 0
 	if x < 0 {
 		return false
 	}
 	for n := x; n > 0; n /= 10 {
-		reversedNum = (reversedNum + n%10) * 10
+		reversedNum = (reversedNum * 10) + reversedNum%10
 	}
 	fmt.Println(reversedNum / 10)
-	return (reversedNum / 10) == x
+	return reversedNum == x
 }
