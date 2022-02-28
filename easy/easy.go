@@ -1,5 +1,7 @@
 package easy
 
+import "fmt"
+
 func Easy() {
-	romanToInt("XIV")
+	fmt.Println(longestCommonPrefix([]string{"this", "that", "them", "they"}))
 }
